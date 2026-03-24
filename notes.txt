@@ -1,0 +1,4 @@
+components/ → UI parts (Upload, Cards, etc.)
+pages/ → full screens (Dashboard, Home)
+services/ → API calls (axios)
+utils/ → helper functions
