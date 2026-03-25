@@ -717,9 +717,12 @@ export default function UploadResume() {
       setKwFilter("all");
       showToast("Analysis complete!", "success");
     } catch (err) {
-      console.error("ERROR:", err.response?.data || err.message);
-     showToast(err.response?.data?.error || "Upload failed", "error");
-} finally {
+    //   console.error("ERROR:", err.response?.data || err.message);
+    //  showToast(err.response?.data?.error || "Upload failed", "error");
+    // slightly cleaner logging
+    console.error("ERROR:", err.response?.status, err.response?.data?.error || err.message);
+    showToast(err.response?.data?.error || "Upload failed", "error");
+    } finally {
       setLoading(false);
     }
   };
