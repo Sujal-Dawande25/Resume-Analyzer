@@ -717,9 +717,9 @@ export default function UploadResume() {
       setKwFilter("all");
       showToast("Analysis complete!", "success");
     } catch (err) {
-      console.error(err);
-      showToast("Upload failed. Please try again.", "error");
-    } finally {
+      console.error("ERROR:", err.response?.data || err.message);
+     showToast(err.response?.data?.error || "Upload failed", "error");
+} finally {
       setLoading(false);
     }
   };
