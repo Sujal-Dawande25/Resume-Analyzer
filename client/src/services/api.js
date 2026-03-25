@@ -1,7 +1,7 @@
     import axios from "axios";
 
 const API = axios.create({
-    baseURL: "http://localhost:5000"
+    baseURL: "https://resume-analyzer-45kb.onrender.com"
 });
 
 export const uploadResume = (formData) => API.post("/upload", formData);
